@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bd0nam6gasjdp"]
+
+[ext_resource type="Script" uid="uid://bygugbex57yqq" path="res://Entities/player.gd" id="1_tcnsb"]
+[ext_resource type="Texture2D" uid="uid://b0rxcocc2dfpy" path="res://icon.svg" id="2_gb1tc"]
+[ext_resource type="PackedScene" uid="uid://b8phed3wbb4xu" path="res://Entities/animation.tscn" id="3_xd3k7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypkcv"]
+radius = 16.0
+height = 32.0
+
+[node name="Player" type="CharacterBody2D" unique_id=114861555]
+script = ExtResource("1_tcnsb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1682623342]
+visible = false
+scale = Vector2(0.25, 0.3125)
+texture = ExtResource("2_gb1tc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1494346472]
+visible = false
+shape = SubResource("CapsuleShape2D_ypkcv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1510627713]
+zoom = Vector2(1.5, 1.5)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Animation" parent="." unique_id=1138078243 instance=ExtResource("3_xd3k7")]
+
+[node name="ArmL1" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="0" unique_id=2845692]
+position = Vector2(0.00105621, -100.04733)
+rotation = -0.3924911
+scale = Vector2(0.9994734, 0.9994734)
+
+[node name="ArmL2" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="1" unique_id=1147438661]
+position = Vector2(19.469193, -52.914375)
+scale = Vector2(0.99948394, 0.99948394)
+
+[node name="LegL2" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="2" unique_id=529932934]
+scale = Vector2(0.9998728, 0.9998728)
+
+[node name="LegL1" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="3" unique_id=42948210]
+position = Vector2(14.34812, 48.262028)
+scale = Vector2(0.9997429, 0.9997429)
+
+[node name="ArmR1" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="4" unique_id=1868599745]
+position = Vector2(0.0010492515, -100.04733)
+rotation = 0.43613872
+scale = Vector2(0.9994832, 0.9994832)
+
+[node name="ArmR2" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="5" unique_id=1288744263]
+position = Vector2(-21.514925, -53.80328)
+rotation = 0.46032992
+scale = Vector2(0.9994586, 0.9994586)
+
+[node name="LegR2" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="6" unique_id=1970304739]
+scale = Vector2(0.9999008, 0.9999008)
+
+[node name="LegR1" parent="Animation/CharacterContainerNew/Polygon" parent_id_path=PackedInt32Array(1138078243, 1137221911) index="7" unique_id=2049439089]
+position = Vector2(-19.097982, 46.878685)
+scale = Vector2(0.9997726, 0.9997726)
+
+[node name="ThighR" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips" parent_id_path=PackedInt32Array(1138078243, 519009282) index="0" unique_id=431453766]
+rotation = 0.21823588
+scale = Vector2(0.99991214, 0.99991214)
+
+[node name="ShinR" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/ThighR" index="1" unique_id=1786814689]
+position = Vector2(-2.6226044e-05, 60.00536)
+rotation = 0.20325989
+scale = Vector2(0.99987245, 0.99987245)
+
+[node name="ThighL" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips" parent_id_path=PackedInt32Array(1138078243, 519009282) index="1" unique_id=1646239046]
+rotation = -0.53991467
+
+[node name="ShinL" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/ThighL" index="1" unique_id=2134729047]
+position = Vector2(0.0009865761, 60.010586)
+rotation = 0.57336855
+scale = Vector2(0.9998722, 0.9998722)
+
+[node name="ShoulderR" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/Torso/Torso1" parent_id_path=PackedInt32Array(1138078243, 1166440914) index="1" unique_id=1079845036]
+position = Vector2(-7.955353, 0.0010490417)
+rotation = -2.7606993
+scale = Vector2(0.9996008, 0.9996008)
+
+[node name="ForearmR" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/Torso/Torso1/ShoulderR" index="1" unique_id=710409407]
+position = Vector2(50.939194, 0.016647339)
+rotation = 0.14672472
+scale = Vector2(0.99972075, 0.99972075)
+
+[node name="ShoulderL" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/Torso/Torso1" parent_id_path=PackedInt32Array(1138078243, 1166440914) index="2" unique_id=1442253846]
+position = Vector2(-7.955353, 0.0010490417)
+rotation = -0.3143185
+scale = Vector2(0.999472, 0.999472)
+
+[node name="ForearmL" parent="Animation/CharacterContainerNew/Bones/Skeleton2D/Hips/Torso/Torso1/ShoulderL" index="1" unique_id=652599834]
+position = Vector2(-51.02171, -0.0037822723)
+rotation = -0.15695061
+scale = Vector2(0.99988586, 0.99988586)
+
+[editable path="Animation"]
